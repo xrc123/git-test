@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev2
+
+---
+server:
+  port: 8081
+spring:
+  profiles: dev1
+  application:
+    name: eureka-client-provider
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server01:8001/eureka/,http://server02:8002/eureka/,http://server03:8003/eureka/
+---
+server:
+  port: 8082
+spring:
+  profiles: dev2
+  application:
+    name: eureka-client-provider
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server01:8001/eureka/,http://server02:8002/eureka/,http://server03:8003/eureka/
